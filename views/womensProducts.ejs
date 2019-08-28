@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title><%= title %></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
+  <div class="container">
+<nav class="navbar navbar-light bg-light" style="background-color: #e3f2fd;">
+        <h1><%= title %>
+            <a class="navbar-brand" href="#">
+                <p class="font-weight-bold"></p>
+            </a>
+        </h1>
+        <div class="nav justify-content-end">
+        <a href="/mensProducts" class="btn btn-primary btn-lg " role="button" aria-disabled="true">Mens</a>
+        <a href="/womensProducts" class="btn btn-secondary btn-lg disabled" role="button" aria-disabled="true">Womens</a>    
+        <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                </div>
+                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab"></div>
+                <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab"></div>
+            </div>
+        </div>
+        <ul class="nav nav-pills mb-3 nav justify-content-center" id="pills-tab" role="tablist"> 
+            <a class="btn btn-primary btn-lg"type="button" href="/registration">Log In</a>
+            <a class="btn btn-secondary btn-lg" type="button" href="/registration" style="margin-left: 1px;">Register</a>
+        </ul>
+    </div>
+</nav>
+
+<body>
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Womens Products</li>
+            </ol>
+        </nav>
+    </div>
+</body>
+<div class="topstrip" style="width:100%;padding-bottom:20px; padding-top:20px;">
+    <div class="container">
+            <% _.each(items, function(topC) { %>
+                <h1><%= topC.name %></h1>
+                <p><%= topC.page_description %></p>
+
+                <% }); %>
+    </div>
+</div>
+<ol>
+    <div>
+
+        <div class="container">
+            <% _.each(items, function(topC) { %>
+            
+                <% if (topC.image) { %>
+                <div>
+                    <img src="/images/<%= topC.image %>" style="max-width: 100%; height: auto;">
+                </div>
+                <% } %>
+                <div class="topstrip" style="width:100%;padding-bottom:20px; padding-top:20px;">
+                      <% _.each(topC.categories, function(subC) { %>
+                           <h2 class="container"><%= subC.name %></h2>
+                            <div class="topstrip" style="width:100%;padding-bottom:20px; padding-top:20px;" >
+                                <% if (subC.image) { %> <div>
+                                    <img src="/images/<%= subC.image %>" class="container">
+                                     <div class="topstrip" style="width:100%;padding-bottom:20px; padding-top:20px;" class="container">
+                                      <p class="container"><%= subC.page_description %></p>
+                                    <p class="container"><a class="btn btn-secondary" href="/mensClothing" role="button" >View Products<hr></a>
+                                </div>
+                                <% } else { %>  
+                                    <img  src="/images/categories/404.png" width="789" height="136" class="container">
+                                 <% } %>
+                                   
+                        <% }); %>
+                </div>
+            
+            <% }); %>
+        </div>
+    </div>
+</ol>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+</script>
+<hr>
+<footer class="container" style="text-align: right;">
+            <p >&copy; OSF Global Services 2019</p>
+</footer>
+</body>
+
+</html>

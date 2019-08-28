@@ -1,0 +1,14 @@
+
+
+
+mongodb+srv://root:gnr123sevenfolD@cluster0-shard-00-00-ydqc4.mongodb.net:27017,cluster0-shard-00-01-ydqc4.mongodb.net:27017,cluster0-shard-00-02-ydqc4.mongodb.net:27017/test?ssl=true&replicaSet=myAtlasRS&authSource=admin
+
+mongoimport -vvvvv --uri "mongodb://root:gnr123sevenfolD@cluster0-shard-00-00-ydqc4.mongodb.net:27017,cluster0-shard-00-01-ydqc4.mongodb.net:27017,cluster0-shard-00-02-ydqc4.mongodb.net:27017/test?ssl=true&replicaSet=myAtlasRS&authSource=admin" --collection shop --drop --file D:\Shop\Db\categories.json
+
+cluster0-shard-00-00-ydqc4.mongodb.net:
+
+mongodb://root:gnr123sevenfolD@cluster0-shard-00-00-ydqc4.mongodb.net/test?ssl=true&replicaSet=myAtlasRS&authSource=admin
+
+mongoimport -vvvvv --uri "mongodb://root:gnr123sevenfolD@cluster0-shard-00-00-ydqc4.mongodb.net/test?ssl=true&replicaSet=myAtlasRS&authSource=admin" --collection shop --drop --file D:\Shop\Db\categories.json
+
+mongoimport -vvvvv --host cluster0-shard-00-00-ydqc4.mongodb.net:27017 --ssl -u pelinyigit -p gnr123sevenfolD --authenticationDatabase admin  --db test --collection shop --drop --file D:\Shop\Db\categories.json
