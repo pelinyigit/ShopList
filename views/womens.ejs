@@ -2,54 +2,169 @@
 <html>
 
 <head>
-    <title><%= title %></title>
+    <title>
+        <%= title %>
+    </title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="/stylesheets/style.css" />
 </head>
-    <div class="container">
-<nav class="navbar navbar-light bg-light" style="background-color: #e3f2fd;">
-        <h1><%= title %>
-            <a class="navbar-brand" href="#">
-                <p class="font-weight-bold"></p>
-            </a>
+<div class="container">
+    <nav class="navbar navbar-light bg-light" style="background-color: #e3f2fd;">
+        <h1>
+            <%= title %>
+                <a class="navbar-brand" href="#">
+                    <p class="font-weight-bold"></p>
+                </a>
         </h1>
         <div class="nav justify-content-end">
-           <a href="/" class="btn btn-primary btn-lg" role="button" aria-disabled="true">Mens</a>
-            <a href="/womens" class="btn btn-secondary btn-lg disabled" role="button" aria-disabled="true">Womens</a> 
+            <a href="/" class="btn btn-primary btn-lg" role="button" aria-disabled="true">Mens</a>
+            <a href="/womens" class="btn btn-secondary btn-lg disabled" role="button" aria-disabled="true">Womens</a>
             <div class="tab-content" id="pills-tabContent">
-                
+
                 <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab"></div>
                 <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab"></div>
             </div>
         </div>
-        <ul class="nav nav-pills mb-3 nav justify-content-center" id="pills-tab" role="tablist"> 
-            <a class="btn btn-primary btn-lg"type="button" href="/registration">Log In</a>
-            <a class="btn btn-secondary btn-lg" type="button" href="/registration" style="margin-left: 1px;">Register</a>
+        <ul class="nav nav-pills mb-3 nav justify-content-center" id="pills-tab" role="tablist">
+            <div class="text-center">
+                <a href="/work/views/registration.ejs" class="btn btn-default btn-rounded my-3" data-toggle="modal" data-target="#modalLRForm">Register</a>
+            </div>
         </ul>
-    </div>
+</div>
 </nav>
 
 <body>
+
+    <div class="container">
+
+        <!--Modal: Login / Register Form-->
+        <div class="modal fade" id="modalLRForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog cascading-modal" role="document">
+                <!--Content-->
+                <div class="modal-content">
+
+                    <!--Modal cascading tabs-->
+                    <div class="modal-c-tabs">
+
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs md-tabs tabs-2 light-blue darken-3" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" href="#panel7" role="tab"><i class="fas fa-user mr-1"></i>
+                                Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#panel8" role="tab"><i class="fas fa-user-plus mr-1"></i>
+                                Register</a>
+                            </li>
+                        </ul>
+
+                        <!-- Tab panels -->
+                        <div class="tab-content">
+                            <!--Panel 7-->
+                            <div class="tab-pane fade in show active" id="panel7" role="tabpanel">
+
+                                <!--Body-->
+                                <div class="modal-body mb-1">
+                                    <div class="md-form form-sm mb-5">
+                                        <i class="fas fa-envelope prefix"></i>
+                                        <input type="email" id="modalLRInput10" class="form-control form-control-sm validate">
+                                        <label data-error="wrong" data-success="right" for="modalLRInput10">Your email</label>
+                                    </div>
+
+                                    <div class="md-form form-sm mb-4">
+                                        <i class="fas fa-lock prefix"></i>
+                                        <input type="password" id="modalLRInput11" class="form-control form-control-sm validate">
+                                        <label data-error="wrong" data-success="right" for="modalLRInput11">Your password</label>
+                                    </div>
+                                    <div class="text-center mt-2">
+                                        <button class="btn btn-info">Log in <i class="fas fa-sign-in ml-1"></i></button>
+                                    </div>
+                                </div>
+                                <!--Footer-->
+                                <div class="modal-footer">
+                                    <div class="options text-center text-md-right mt-1">
+                                        <p>Not a member? <a href="#" class="blue-text">Sign Up</a></p>
+                                        <p>Forgot <a href="#" class="blue-text">Password?</a></p>
+                                    </div>
+                                    <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Close</button>
+                                </div>
+
+                            </div>
+                            <!--/.Panel 7-->
+
+                            <!--Panel 8-->
+                            <div class="tab-pane fade" id="panel8" role="tabpanel">
+
+                                <!--Body-->
+                                <div class="modal-body">
+                                    <div class="md-form form-sm mb-5">
+                                        <i class="fas fa-envelope prefix"></i>
+                                        <input type="email" id="modalLRInput12" class="form-control form-control-sm validate">
+                                        <label data-error="wrong" data-success="right" for="modalLRInput12">Your email</label>
+                                    </div>
+
+                                    <div class="md-form form-sm mb-5">
+                                        <i class="fas fa-lock prefix"></i>
+                                        <input type="password" id="modalLRInput13" class="form-control form-control-sm validate">
+                                        <label data-error="wrong" data-success="right" for="modalLRInput13">Your password</label>
+                                    </div>
+
+                                    <div class="md-form form-sm mb-4">
+                                        <i class="fas fa-lock prefix"></i>
+                                        <input type="password" id="modalLRInput14" class="form-control form-control-sm validate">
+                                        <label data-error="wrong" data-success="right" for="modalLRInput14">Repeat password</label>
+                                    </div>
+
+                                    <div class="text-center form-sm mt-2">
+                                        <button class="btn btn-info">Sign up <i class="fas fa-sign-in ml-1"></i></button>
+                                    </div>
+
+                                </div>
+                                <!--Footer-->
+                                <div class="modal-footer">
+                                    <div class="options text-right">
+                                        <p class="pt-1">Already have an account? <a href="#" class="blue-text">Log In</a></p>
+                                    </div>
+                                    <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                            <!--/.Panel 8-->
+                        </div>
+
+                    </div>
+                </div>
+                <!--/.Content-->
+            </div>
+        </div>
+        <!--Modal: Login / Register Form-->
+
+
+    </div>
+
     <div class="container">
         <ol class="breadcrumb" style="width:100%;padding-left:400x;">
-            <li class="breadcrumb-item"><a href="/">Home</a></li>
-           <!-- <li class="breadcrumb-item active" aria-current="page"></li> --> 
+            <li class="breadcrumb-item"><a href="/">Womens</a></li>
+            <!-- <li class="breadcrumb-item active" aria-current="page"></li> -->
         </ol>
     </div>
+
 </body>
 <div class="topstrip" style="width:100%;padding-bottom:20px; padding-top:20px;">
     <div class="container">
-            <% _.each(items, function(topC) { %>
-                <h1><%= topC.name %></h1>
-                <p><%= topC.page_description %></p>
+        <% _.each(items, function(topC) { %>
+            <h1>
+                <%= topC.name %>
+            </h1>
+            <p>
+                <%= topC.page_description %>
+            </p>
 
-                <% }); %>
+            <% }); %>
     </div>
 </div>
 <ol>
@@ -57,46 +172,48 @@
 
         <div class="container">
             <% _.each(items, function(topC) { %>
-            
+
                 <% if (topC.image) { %>
-                <div>
-                    <img src="/images/<%= topC.image %>" style="max-width: 100%; height: auto;">
-                </div>
-                <% } %>
-                <div class="topstrip" style="width:100%;padding-bottom:20px; padding-top:20px;">
-                     <% _.each(topC.categories, function(subC) { %>
-                          <h2 class="container"><%= subC.name %></h2>
-                            <div class="topstrip" style="width:100%;padding-bottom:20px; padding-top:20px;" >
-                                <% if (subC.image) { %> <div>
-                                    <img src="/images/<%= subC.image %>" class="container">
-                                     <div class="topstrip" style="width:100%;padding-bottom:20px; padding-top:20px;" class="container">
-                                      <p class="container"><%= subC.page_description %></p>
-                                    <p class="container"><a class="btn btn-secondary" href="/womensProducts" role="button" >View Products<hr></a>
+                    <div>
+                        <img src="/images/<%= topC.image %>" style="max-width: 100%; height: auto;">
+                    </div>
+                    <% } %>
+                        <div class="topstrip" style="width:100%;padding-bottom:20px; padding-top:20px;">
+                            <% _.each(topC.categories, function(subC) { %>
+                                <h2 class="container">
+                                    <%= subC.name %>
+                                </h2>
+                                <div class="topstrip" style="width:100%;padding-bottom:20px; padding-top:20px;">
+                                    <% if (subC.image) { %>
+                                        <div>
+                                            <img src="/images/<%= subC.image %>" class="container">
+                                            <div class="topstrip" style="width:100%;padding-bottom:20px; padding-top:20px;" class="container">
+                                                <p class="container">
+                                                    <%= subC.page_description %>
+                                                </p>
+                                                <p class="container"><a class="btn btn-secondary" href="/womensProducts" role="button">View Products<hr></a>
+                                            </div>
+                                            <% } else { %>
+                                                <img src="/images/categories/404.png" width="789" height="136" class="container">
+                                                <% } %>
+
+                                                    <% }); %>
+                                        </div>
+
+                                        <% }); %>
                                 </div>
-                                <% } else { %>  
-                                    <img  src="/images/categories/404.png" width="789" height="136" class="container">
-                                 <% } %>
-                                   
-                        <% }); %>
-                </div>
-            
-            <% }); %>
-        </div>
-    </div>
+                        </div>
 </ol>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
 </script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
 </script>
 
 <footer class="container" style="text-align: right;">
-<hr>
-            <p >&copy; OSF Global Services 2019</p>
+    <hr>
+    <p>&copy; OSF Global Services 2019</p>
 </footer>
 </body>
 
