@@ -41,7 +41,7 @@
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Mens Products</li>
+                <li class="breadcrumb-item active" aria-current="page">Mens Clothing</li>
             </ol>
         </nav>
     </div>
@@ -56,38 +56,7 @@
                 <% }); %>
     </div>
 </div>
-<ol>
-    <div>
 
-        <div class="container">
-            <% _.each(items, function(topC) { %>
-            
-                <% if (topC.image) { %>
-                <div>
-                    <img  src="/images/<%= topC.image %>" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" style="max-width: 100%; height: auto;">
-                </div>
-                <% } %>
-                <div class="topstrip" style="width:100%;padding-bottom:20px; padding-top:20px;">
-                     <% _.each(topC.categories, function(subC) { %>
-                            <h2 class="container"><%= subC.name %></h2>
-                            <div class="topstrip" style="width:100%;padding-bottom:20px; padding-top:20px;" >
-                                <% if (subC.image) { %> <div>
-                                    <img src="/images/<%= subC.image %>" class="container">
-                                     <div class="topstrip" style="width:100%;padding-bottom:20px; padding-top:20px;" class="container">
-                                      <p class="container"><%= subC.page_description %></p>
-                                    <p class="container"><a class="btn btn-secondary" href="/mensClothing" role="button" >View Products<hr></a>
-                                </div>
-                                <% } else { %>  
-                                    <img  src="/images/categories/404.png" width="789" height="136" class="container">
-                                 <% } %>
-                                   
-                        <% }); %>
-                </div>
-            
-            <% }); %>
-        </div>
-    </div>
-</ol>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
 </script>

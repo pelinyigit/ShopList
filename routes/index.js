@@ -104,7 +104,7 @@ exports.mensClothing = function(req, res) {
 	
 
 	mdbClient.connect(uri, function(err, client) {
-	 client.db('test').collection('shop').find({ }).toArray(function(err, items) {
+	 client.db('test').collection('shop').find({parent_category_id: "mens-clothing"}).toArray(function(err, items) {
 			res.render("mensClothing", { 
 				// Underscore.js lib
 				_     : _, 
