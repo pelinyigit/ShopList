@@ -2,7 +2,7 @@ exports.registration = function(req, res) {
 
     var _ = require("underscore");
     var mdbClient = require('mongodb').MongoClient;
-    var uri = "mongodb+srv://pelinyigit:gnr123sevenfolD@cluster0-ydqc4.mongodb.net/test?w=majority";
+    var uri = "mongodb+srv://<username>:<password>@cluster0-ydqc4.mongodb.net/test?w=majority";
 
 
 
@@ -21,7 +21,7 @@ exports.mens = function(req, res) {
 
     var _ = require("underscore");
     var mdbClient = require('mongodb').MongoClient;
-    var uri = "mongodb+srv://pelinyigit:gnr123sevenfolD@cluster0-ydqc4.mongodb.net/test?w=majority";
+    var uri = "mongodb+srv://<username>:<password>@cluster0-ydqc4.mongodb.net/test?w=majority";
 
 
 
@@ -43,7 +43,7 @@ exports.mens = function(req, res) {
 exports.womens = function(req, res) {
     var _ = require("underscore");
     var mdbClient = require('mongodb').MongoClient;
-    var uri = "mongodb+srv://pelinyigit:gnr123sevenfolD@cluster0-ydqc4.mongodb.net/test?w=majority";
+    var uri = "mongodb+srv://<username>:<password>@cluster0-ydqc4.mongodb.net/test?w=majority";
 
 
 
@@ -65,7 +65,7 @@ exports.womens = function(req, res) {
 exports.mensProducts = function(req, res) {
     var _ = require("underscore");
     var mdbClient = require('mongodb').MongoClient;
-    var uri = "mongodb+srv://pelinyigit:gnr123sevenfolD@cluster0-ydqc4.mongodb.net/test?w=majority";
+    var uri = "mongodb+srv://<username>:<password>@cluster0-ydqc4.mongodb.net/test?w=majority";
 
 
 
@@ -87,7 +87,7 @@ exports.mensProducts = function(req, res) {
 exports.mensClothing = function(req, res) {
     var _ = require("underscore");
     var mdbClient = require('mongodb').MongoClient;
-    var uri = "mongodb+srv://pelinyigit:gnr123sevenfolD@cluster0-ydqc4.mongodb.net/test?w=majority";
+    var uri = "mongodb+srv://<username>:<password>@cluster0-ydqc4.mongodb.net/test?w=majority";
 
 
 
@@ -109,7 +109,7 @@ exports.mensClothing = function(req, res) {
 exports.womensProducts = function(req, res) {
     var _ = require("underscore");
     var mdbClient = require('mongodb').MongoClient;
-    var uri = "mongodb+srv://pelinyigit:gnr123sevenfolD@cluster0-ydqc4.mongodb.net/test?w=majority";
+    var uri = "mongodb+srv://<username>:<password>@cluster0-ydqc4.mongodb.net/test?w=majority";
 
 
 
